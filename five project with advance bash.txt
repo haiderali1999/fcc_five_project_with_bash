@@ -1,0 +1,146 @@
+project 1:
+
+make script file
+
+sh stands for shell
+
+filename.sh
+
+run file with
+
+sh filename.sh
+
+bash questionnaire.sh
+
+bash stands for bourne-again shell
+
+which bash (find bash used for scripting)
+
+
+That's the absolute path to the bash interpreter. 
+You can tell your program to use it by placing a 
+shebang at the very top of the file like this: 
+#!<path_to_interpreter>. Add a shebang at the 
+very top of your file, the one you want looks like this: #!/bin/bash.
+
+ls -l (visible the permissions)
+
+chmod +x questionnaire.sh (for executeable permmision x stands for permissions r for read and w for write) (chmod stand for change mode)
+
+That didn't work as I hoped. Another way to find information about a command is with man. 
+It stands for manual and you can use it like this: man <command>. See if there's a manual for echo.
+
+
+project 2:
+
+help to find help for commands
+
+help [command name]
+
+echo $* (print all args that comes pass from terminal to script)
+
+echo $1 (this is the way to access first arg)
+
+man [command] (manual)
+
+man echo (man is used for help about the command)
+
+man ls
+
+man chmod
+
+if [[ CONDITION ]]
+then
+  STATEMENTS
+fi
+
+if [[ CONDITION ]]
+then
+  STATEMENTS
+else
+  STATEMENTS
+fi
+
+ You can compare integers inside the brackets ([[ ... ]]) of your if with -eq (equal), 
+-ne (not equal), -lt (less than), -le (less than or equal), -gt (greater than), 
+-ge (greater than or equal). Change your if condition to check if your first argument is less than 5.
+
+help test
+
+
+Nothing happened? Each command has an exit status that can be accessed with $?. View the exit status of the last command with echo $?.
+
+[[ 4 -ge 5 ]]; echo $?
+
+You can think of an exit status of 0 as true. 
+But it means that the command had zero errors. 
+All commands have an exit status. Using the same syntax, enter bad_command; and check its exit status on a single line.
+
+help [[
+
+
+for (( i = 10; i > 0; i-- ))
+do
+  echo $i
+done
+
+ls /
+
+multi line comment 
+
+: 'hehe'
+
+project 3 bingo
+
+printenv
+
+View all variables in the shell with declare -p. -p stands for print
+
+help let
+
+(( I + 4 ))
+
+$(( I + 4 ))
+
+echo $(( I + 4 ))
+
+declare -p (print all variable)
+
+declare -p J (print the variable by name)
+
+extra spaces in sytax cause the errors
+
+(( )) (these brackets use logical operators like < > = <= >= = etc
+
+[[ ]] (these brackets use linux syntax like -lt -gt -ge -le etc)
+
+ARR=("a" "b" "c")
+
+$ARR[1]
+
+echo $*. echo $@ would have worked as well. Similarly, you can use the * or @ to print your whole array.
+ In the terminal, use echo to print all the items in your array.
+
+echo ${ARR[@]}
+
+echo ${RESPONSES[5]}
+
+N=$(( RANDOM%6 ))
+
+help until
+help sleep
+help FUNCTION
+
+[[ hello == hello ]]; echo $?
+
+[[ hello =~ el ]]; echo $? (for pattern matching)
+
+[[ "hello world" =~ "lo wor" ]]; echo $? (for add spacing)
+
+[[ "hello world" =~ ^h ]]; echo $? (regular expression)
+
+[[ "hello world" =~ ^h.+d$ ]]; echo $?
+
+== for simple string for expressions =~
+
+type (for check the type of variables or builtin modules)
